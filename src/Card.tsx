@@ -1,0 +1,95 @@
+import drawersJpg from "./assets/drawers.jpg";
+import avatarMichelleJpg from "./assets/avatar-michelle.jpg";
+import iconShareSvg from "./assets/icon-share.svg";
+import iconFacebookSvg from "./assets/icon-facebook.svg";
+import iconTwitterSvg from "./assets/icon-twitter.svg";
+import iconPrinterest from "./assets/icon-pinterest.svg";
+import { useState } from "react";
+
+const Avatar = () => {
+	return (
+		<div className="flex">
+			<img
+				className="rounded-full h-full aspect-square mr-4 aria-hidden:"
+				src={avatarMichelleJpg}
+				alt=""
+			/>
+			<div className="flex flex-col p-1 justify-between h-full">
+				<h2 className="text-Very_Dark_Grayish_Blue font-bold">
+					Michelle Appleton
+				</h2>
+				<p className="text-Grayish_Blue">28 Jun 2020</p>
+			</div>
+		</div>
+	);
+};
+
+const Share = () => {
+	return (
+		<div className="flex" id="share">
+			<h2 className="tracking-widest self-center mr-4">SHARE</h2>
+			<button>
+				<img src={iconFacebookSvg} alt="iconFacebook" />
+			</button>
+			<button>
+				<img src={iconTwitterSvg} alt="iconTwitter" />
+			</button>
+			<button>
+				<img src={iconPrinterest} alt="" />
+			</button>
+		</div>
+	);
+};
+
+const Card = () => {
+	const [shareActive, setShareActive] = useState(false);
+	const handleOnClick = () => {
+		const elem = document.getElementById("color");
+		if (elem === null) return;
+		if (shareActive) elem.classList.remove("shareActive");
+		else elem.classList.add("shareActive");
+		setShareActive(!shareActive);
+	};
+	return (
+		<div className="w-4/5 h-4/5 min-w-[300px] max-w-[400px] max-h-[700px] bg-white rounded-lg">
+			<img
+				src={drawersJpg}
+				alt=""
+				className="w-full h-2/5 rounded-t-[inherit]"
+			/>
+			<div className="flex flex-col justify-between h-3/5 font-sans font-medium text-[13px] text-Desaturated_Dark_Blue">
+				<div className="mx-8 relative top-8">
+					<h1 className="font-bold text-lg tracking-wider text-Very_Dark_Grayish_Blue">
+						Shift the overall look and feel by adding these
+						wonderful touches to furniture in your home
+					</h1>
+
+					<p className="tracking-wide relative top-4">
+						Ever been in a room and felt like something was missing?
+						Perhaps it felt slightly bare and uninviting. I’ve got
+						some simple tips to help you make any room feel
+						complete.
+					</p>
+				</div>
+				<div id="color">
+					<div className="flex justify-between w-full h-12 px-8 my-4">
+						{shareActive ? <Share /> : <Avatar />}
+						<button
+							type="button"
+							className="flex justify-center items-center bg-Light_Grayish_Blue aspect-square rounded-full h-full"
+							onClick={handleOnClick}
+						>
+							<img
+								className="scale-125"
+								src={iconShareSvg}
+								alt=""
+							/>
+						</button>
+					</div>
+				</div>
+			</div>
+		</div>
+	);
+};
+
+export default Card;
