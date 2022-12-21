@@ -27,7 +27,7 @@ const Avatar = () => {
 const Share = () => {
 	return (
 		<div className="flex items-center " id="share">
-			<h2 className="tracking-widest mr-4">SHARE</h2>
+			<h2 className="tracking-[0.75em] mr-4">SHARE</h2>
 			<a href="#">
 				<img src={iconFacebookSvg} alt="iconFacebook" />
 			</a>
@@ -51,13 +51,18 @@ const Card = () => {
 		setShareActive(!shareActive);
 	};
 	return (
-		<div className="w-4/5 h-4/5 min-w-[300px] max-w-[400px] max-h-[700px] bg-white rounded-lg">
-			<img
-				src={drawersJpg}
-				alt=""
-				className="w-full h-2/5 rounded-t-[inherit]"
-			/>
-			<div className="flex flex-col justify-between h-3/5 font-sans font-medium text-[13px] text-Desaturated_Dark_Blue">
+		<div
+			className="w-4/5 h-4/5 min-w-[300px] max-w-[400px] max-h-[700px] bg-white rounded-lg flex flex-col 
+        md:flex-row md:w-3/5 md:h-2/5 md:max-w-[800px] md:max-h-none md:min-w-[600px] md:min-h-[350px]"
+		>
+			<div className="w-full h-2/5 md:full md:h-full rounded-[inherit] md:rounded-r-none md:overflow-hidden">
+				<img
+					src={drawersJpg}
+					alt=""
+					className="w-full h-full rounded-t-lg md:relative md:left-6 md:rounded-t-none md:rounded-l-lg md:scale-125"
+				/>
+			</div>
+			<div className="flex flex-col justify-between h-3/5 font-sans font-medium text-[13px] text-Desaturated_Dark_Blue md:h-full">
 				<div className="mx-8 relative top-8">
 					<h1 className="font-bold text-lg tracking-wider text-Very_Dark_Grayish_Blue">
 						Shift the overall look and feel by adding these
