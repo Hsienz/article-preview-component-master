@@ -3,13 +3,19 @@
 @tailwind components;
 @tailwind utilities;
 @layer components {
-  #share button {
-    @apply w-10 aspect-square;
+  #share a {
+    @apply w-10 aspect-square flex flex-col h-full justify-center;
   }
-  #share button img {
-    @apply aspect-square;
+  #share a img {
+    @apply aspect-square w-6;
   }
   .shareActive {
     @apply bg-Very_Dark_Grayish_Blue rounded-b-lg;
+  }
+  .shareActive #shareBtn {
+    @apply bg-Desaturated_Dark_Blue;
+  }
+  .shareActive #shareBtn img {
+    filter: brightness(1.75);
   }
 }/*# sourceMappingURL=index.css.map */

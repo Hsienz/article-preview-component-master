@@ -5,14 +5,20 @@
 
 @layer components {
 	#share {
-		button {
-			@apply w-10 aspect-square;
+		a {
+			@apply w-10 aspect-square flex flex-col h-full justify-center;
 			img {
-				@apply aspect-square;
+				@apply aspect-square w-6;
 			}
 		}
 	}
 	.shareActive {
 		@apply bg-Very_Dark_Grayish_Blue rounded-b-lg;
+		#shareBtn {
+			@apply bg-Desaturated_Dark_Blue;
+			img {
+				filter: brightness(1.75);
+			}
+		}
 	}
 }

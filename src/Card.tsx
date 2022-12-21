@@ -26,17 +26,17 @@ const Avatar = () => {
 
 const Share = () => {
 	return (
-		<div className="flex" id="share">
-			<h2 className="tracking-widest self-center mr-4">SHARE</h2>
-			<button>
+		<div className="flex items-center " id="share">
+			<h2 className="tracking-widest mr-4">SHARE</h2>
+			<a href="#">
 				<img src={iconFacebookSvg} alt="iconFacebook" />
-			</button>
-			<button>
+			</a>
+			<a href="#">
 				<img src={iconTwitterSvg} alt="iconTwitter" />
-			</button>
-			<button>
+			</a>
+			<a href="#">
 				<img src={iconPrinterest} alt="" />
-			</button>
+			</a>
 		</div>
 	);
 };
@@ -71,11 +71,12 @@ const Card = () => {
 						complete.
 					</p>
 				</div>
-				<div id="color">
+				<div id="color" className="transition-all">
 					<div className="flex justify-between w-full h-12 px-8 my-4">
 						{shareActive ? <Share /> : <Avatar />}
 						<button
 							type="button"
+							id="shareBtn"
 							className="flex justify-center items-center bg-Light_Grayish_Blue aspect-square rounded-full h-full"
 							onClick={handleOnClick}
 						>
