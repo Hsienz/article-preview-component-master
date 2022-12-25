@@ -12,8 +12,8 @@
 			}
 		}
 	}
-	#shareBtn.shareActive,
-	#share #shareBtn {
+	#shareBtn.shareActive
+	{
 		@apply bg-Desaturated_Dark_Blue;
 		img {
 			filter: brightness(10);

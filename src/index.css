@@ -9,12 +9,10 @@
   #share a img {
     @apply aspect-square w-6;
   }
-  #shareBtn.shareActive,
-#share #shareBtn {
+  #shareBtn.shareActive {
     @apply bg-Desaturated_Dark_Blue;
   }
-  #shareBtn.shareActive img,
-#share #shareBtn img {
+  #shareBtn.shareActive img {
     filter: brightness(10);
   }
   #avatar.shareActive {

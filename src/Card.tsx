@@ -22,7 +22,8 @@ const ShareBtn = () => {
 		<button
 			type="button"
 			id="shareBtn"
-			className="flex justify-center items-center bg-Light_Grayish_Blue aspect-square rounded-full"
+			aria-label="shareButton"
+			className="flex justify-center items-center bg-Light_Grayish_Blue aspect-square rounded-full absolute h-12 top-2 right-2"
 			onClick={handleOnClick}
 		>
 			<img className="scale-125" src={iconShareSvg} alt="" />
@@ -46,7 +47,6 @@ const Avatar = () => {
 					<p className="text-Grayish_Blue">28 Jun 2020</p>
 				</div>
 			</div>
-			<ShareBtn />
 		</div>
 	);
 };
@@ -54,8 +54,8 @@ const Avatar = () => {
 const Share = () => {
 	return (
 		<div
-			className="hidden bg-Very_Dark_Grayish_Blue w-full h-full relative px-6 py-2 py-auto justify-between 
-			md:absolute md:w-64 md:h-8 md:top-[53%] md:left-[65%] md:py-8 md:rounded-lg md:box-border
+			className="hidden bg-Very_Dark_Grayish_Blue w-full h-full absolute px-6 py-2 py-auto justify-between 
+			md:absolute md:w-64 md:h-8 md:-right-24 md:bottom-24 md:py-8 md:rounded-lg md:box-border
 			md:before:contents-[''] md:before:box-border md:before:absolute md:before:top-16 md:before:left-[40%] md:before:border-[16px] md:before:border-Very_Dark_Grayish_Blue md:before:border-l-transparent md:before:border-r-transparent md:before:border-b-transparent"
 			id="share"
 		>
@@ -71,7 +71,6 @@ const Share = () => {
 					<img src={iconPrinterest} alt="iconPrinterest" />
 				</a>
 			</div>
-			<ShareBtn />
 		</div>
 	);
 };
@@ -80,7 +79,7 @@ const Card = () => {
 	return (
 		<div
 			className="w-4/5 h-4/5 min-w-[300px] max-w-[400px] max-h-[700px] bg-white rounded-lg flex flex-col overflow-hidden
-        md:flex-row md:w-3/5 md:h-2/5 md:max-w-[800px] md:max-h-none md:min-w-[600px] md:min-h-[350px]"
+        md:flex-row md:w-3/5 md:h-2/5 md:max-w-[800px] md:max-h-none md:min-w-[600px] md:min-h-[350px] md:overflow-visible"
 		>
 			<div className="w-full h-2/5 md:full md:h-full rounded-[inherit] md:rounded-r-none md:overflow-hidden">
 				<img
@@ -103,9 +102,10 @@ const Card = () => {
 						complete.
 					</p>
 				</div>
-				<div className="flex justify-between w-full h-[20%]">
+				<div className="flex justify-between w-full h-[20%] relative">
 					<Avatar />
 					<Share />
+					<ShareBtn/>
 				</div>
 			</div>
 		</div>
