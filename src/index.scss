@@ -12,12 +12,14 @@
 			}
 		}
 	}
-	#shareBtn.shareActive {
+	#shareBtn.shareActive,
+	#share #shareBtn {
 		@apply bg-Desaturated_Dark_Blue;
 		img {
 			filter: brightness(10);
 		}
 	}
+
 
 	#avatar.shareActive {
 		@apply hidden md:flex;
