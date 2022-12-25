@@ -9,13 +9,16 @@
   #share a img {
     @apply aspect-square w-6;
   }
-  .shareActive {
-    @apply bg-Very_Dark_Grayish_Blue rounded-b-lg;
-  }
-  .shareActive #shareBtn {
+  #shareBtn.shareActive {
     @apply bg-Desaturated_Dark_Blue;
   }
-  .shareActive #shareBtn img {
+  #shareBtn.shareActive img {
     filter: brightness(10);
+  }
+  #avatar.shareActive {
+    @apply hidden md:flex;
+  }
+  #share.shareActive {
+    @apply flex;
   }
 }/*# sourceMappingURL=index.css.map */
